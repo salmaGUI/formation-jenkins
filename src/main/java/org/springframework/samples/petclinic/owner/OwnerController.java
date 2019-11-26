@@ -92,11 +92,13 @@ class OwnerController {
             // no owners found
             result.rejectValue("lastName", "notFound", "not found");
             return "owners/findOwners";
-        } else if (results.size() == 1) {
+        } 
+	else if (results.size() == 1) {
             // 1 owner found
             owner = results.iterator().next();
             return "redirect:/owners/" + owner.getId();
-        } else {
+        } 
+	else {
             // multiple owners found
             model.put("selections", results);
             return "owners/ownersList";
